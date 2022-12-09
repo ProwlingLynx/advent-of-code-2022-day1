@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 public class ElfListCreator {
     private Scanner scanner;
 
-    ElfListCreator(String fileLocation) throws FileNotFoundException{
+    public ElfListCreator(String fileLocation) throws FileNotFoundException{
         File textFile = new File(fileLocation);
         this.scanner = new Scanner(textFile);
     }
