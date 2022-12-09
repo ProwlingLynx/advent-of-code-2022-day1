@@ -1,6 +1,7 @@
 package elf;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Elf implements Comparable{
     private final ArrayList<Integer> lunch = new ArrayList<>();
@@ -24,5 +25,9 @@ public class Elf implements Comparable{
         }
 
         return -1;
+    }
+
+    public void display() {
+        System.out.println(Arrays.toString(lunch.toArray()));
     }
 }
