@@ -16,13 +16,14 @@ public final class ElfServices {
         return mostCaloricLunch;
     }
 
-    public static int[] getTopThreeCaloricLunches (ArrayList<Elf> elves) {
-        int[] topThreeLunches = new int[3];
+    public static int getTopThreeCaloricLunches (ArrayList<Elf> elves) {
+        int topThreeLunches = 0;
         Collections.sort(elves);
         int length = elves.size();
-        topThreeLunches[0] = elves.get(length - 1).addUpCaloriesInMeal();
-        topThreeLunches[1] = elves.get(length - 2).addUpCaloriesInMeal();
-        topThreeLunches[2] = elves.get(length - 3).addUpCaloriesInMeal();
+        topThreeLunches  += elves.get(length - 1).addUpCaloriesInMeal();
+        topThreeLunches += elves.get(length - 2).addUpCaloriesInMeal();
+        topThreeLunches += elves.get(length - 3).addUpCaloriesInMeal();
+
         return topThreeLunches;
     }
 }

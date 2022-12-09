@@ -4,8 +4,6 @@ import elf.Elf;
 import readinput.ElfListCreator;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-
 public class TestElfServices {
     public static void main(String[] args) {
         try {
@@ -20,10 +18,14 @@ public class TestElfServices {
             System.out.println("Test Failed");
         }
         try {
-            ElfListCreator elc = new ElfListCreator("src/main/resources/puzzleInput.txt");
+            ElfListCreator elc = new ElfListCreator("src/main/resources/input.txt");
             ArrayList<Elf> elves = elc.scanFileForElfFood();
-            int[] topThree = ElfServices.getTopThreeCaloricLunches(elves);
-            System.out.println(Arrays.toString(topThree));
+            int topThree = ElfServices.getTopThreeCaloricLunches(elves);
+            System.out.println(topThree);
+            for(Elf e: elves) {
+                e.display();
+                System.out.println(e.addUpCaloriesInMeal());
+            }
             System.out.println("End of test");
         } catch (Exception e) {
             System.out.println("Test failed");

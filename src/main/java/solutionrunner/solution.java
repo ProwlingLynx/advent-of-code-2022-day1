@@ -4,6 +4,7 @@ import elfservices.ElfServices;
 import readinput.ElfListCreator;
 
 import java.util.ArrayList;
+
 import elf.Elf;
 
 public class solution {
@@ -17,6 +18,13 @@ public class solution {
             System.out.println("Something went wrong again");
         }
 
-
+        try {
+            ElfListCreator elc = new ElfListCreator("src/main/resources/puzzleInput.txt");
+            ArrayList<Elf> elves = elc.scanFileForElfFood();
+            int topThreeLunches = ElfServices.getTopThreeCaloricLunches(elves);
+            System.out.println(topThreeLunches);
+        } catch (Exception e) {
+            System.out.println("Guess they weren't hungry");
+        }
     }
 }
