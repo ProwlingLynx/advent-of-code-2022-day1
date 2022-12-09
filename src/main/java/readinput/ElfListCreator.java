@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 public class ElfListCreator {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public ElfListCreator(String fileLocation) throws FileNotFoundException{
         File textFile = new File(fileLocation);
@@ -29,6 +29,7 @@ public class ElfListCreator {
                 hungryElf = new Elf();
             }
         }
+        listOfElves.add(hungryElf);
         return listOfElves;
     }
 
